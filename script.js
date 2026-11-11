@@ -31,3 +31,22 @@ document.querySelectorAll(".section, .intro-strip, .hero-copy, .hero-art, .exper
   el.classList.add("reveal");
   observer.observe(el);
 });
+
+
+// Subtle pointer parallax for the portrait panel on larger screens.
+(() => {
+  const panel = document.querySelector(".hero-art");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const finePointer = window.matchMedia("(pointer: fine)").matches;
+  if (!panel || reduceMotion || !finePointer) return;
+
+  panel.addEventListener("pointermove", (event) => {
+    const rect = panel.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+    panel.style.transform = `perspective(1000px) rotateY(${x * 2.2}deg) rotateX(${-y * 2.2}deg)`;
+  });
+  panel.addEventListener("pointerleave", () => {
+    panel.style.transform = "";
+  });
+})();
