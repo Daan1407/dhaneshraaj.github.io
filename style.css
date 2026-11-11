@@ -31,3 +31,67 @@
 .portrait-monogram span{color:var(--ice)}
 .hero-art-portrait .art-caption,.hero-art-portrait .vertical-caption{z-index:3}
 @media(max-width:680px){.hero-portrait{object-position:center 30%}}
+
+
+/* CINEMATIC MOTION PACK — restrained, accessible animations */
+@keyframes heroCopyIn {
+  from { opacity: 0; transform: translate3d(0, 26px, 0); filter: blur(5px); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); filter: blur(0); }
+}
+@keyframes heroArtIn {
+  from { opacity: 0; transform: translate3d(24px, 0, 0) scale(.965); filter: blur(7px); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0) scale(1); filter: blur(0); }
+}
+@keyframes portraitDrift {
+  0%, 100% { transform: scale(1.025) translate3d(0, 0, 0); }
+  50%      { transform: scale(1.065) translate3d(0, -5px, 0); }
+}
+@keyframes orbitRotate {
+  from { transform: rotate(-32deg); }
+  to   { transform: rotate(328deg); }
+}
+@keyframes orbitRotateReverse {
+  from { transform: rotate(58deg); }
+  to   { transform: rotate(-302deg); }
+}
+@keyframes icePulse {
+  0%, 100% { box-shadow: 0 0 0 0 #a9d8ee00; opacity: .65; }
+  50%      { box-shadow: 0 0 18px 2px #a9d8ee38; opacity: 1; }
+}
+@keyframes captionFade {
+  from { opacity: 0; letter-spacing: .22em; }
+  to   { opacity: 1; letter-spacing: .13em; }
+}
+@keyframes buttonArrow {
+  0%, 100% { transform: translate(0, 0); }
+  50%      { transform: translate(3px, -3px); }
+}
+@keyframes softGlow {
+  0%, 100% { opacity: .25; }
+  50%      { opacity: .6; }
+}
+.hero-copy:not(.visible) { animation: heroCopyIn 1s cubic-bezier(.2,.7,.2,1) both; }
+.hero-art:not(.visible) { animation: heroArtIn 1.2s .18s cubic-bezier(.2,.7,.2,1) both; }
+.hero-art-portrait .hero-portrait { animation: portraitDrift 16s ease-in-out infinite; }
+.hero-art-portrait .orbit-a { animation: orbitRotate 42s linear infinite; }
+.hero-art-portrait .orbit-b { animation: orbitRotateReverse 54s linear infinite; }
+.hero-art-portrait .crosshair-one { animation: icePulse 4.5s ease-in-out infinite; }
+.hero-art-portrait .crosshair-two { animation: icePulse 5.5s 1s ease-in-out infinite; }
+.hero-art-portrait .art-caption { animation: captionFade 1.2s .8s both; }
+.hero-actions .button span { display: inline-block; animation: buttonArrow 2.8s ease-in-out infinite; }
+.hero-art { will-change: transform; transition: transform .25s ease-out; }
+.project-card, .writing-card, .capability { will-change: transform; }
+.project-card:hover, .writing-card:hover { box-shadow: 0 16px 40px #00000035; }
+.section-kicker span { text-shadow: 0 0 14px #a9d8ee55; }
+.contact-orb { animation: softGlow 7s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-copy:not(.visible), .hero-art:not(.visible),
+  .hero-art-portrait .hero-portrait, .hero-art-portrait .orbit-a,
+  .hero-art-portrait .orbit-b, .hero-art-portrait .crosshair-one,
+  .hero-art-portrait .crosshair-two, .hero-art-portrait .art-caption,
+  .hero-actions .button span, .contact-orb {
+    animation: none !important;
+  }
+  .hero-art { transition: none; }
+}
