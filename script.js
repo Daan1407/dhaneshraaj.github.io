@@ -26,7 +26,7 @@ const observer = new IntersectionObserver((entries) => {
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.04, rootMargin: "0px 0px -25px 0px" });
 document.querySelectorAll(".section, .intro-strip, .hero-copy, .hero-art, .experience-item, .project-card, .writing-card, .capability, .credential-list > div").forEach(el => {
   el.classList.add("reveal");
   observer.observe(el);
@@ -50,3 +50,11 @@ document.querySelectorAll(".section, .intro-strip, .hero-copy, .hero-art, .exper
     panel.style.transform = "";
   });
 })();
+
+
+// Stagger sibling cards and list rows for a clearer cinematic reveal.
+document.querySelectorAll(".project-grid, .writing-grid, .capability-grid, .credential-list, .experience-list").forEach(group => {
+  [...group.children].forEach((child, index) => {
+    child.style.transitionDelay = `${Math.min(index * 110, 440)}ms`;
+  });
+});
