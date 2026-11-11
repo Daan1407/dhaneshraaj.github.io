@@ -95,3 +95,326 @@
   }
   .hero-art { transition: none; }
 }
+
+
+/* SPACING & CONTENT DENSITY UPDATE — wider use of desktop canvas */
+@media (min-width: 1100px) {
+  .site-header { padding-left: 4.5vw; padding-right: 4.5vw; }
+  .hero {
+    max-width: 1900px;
+    padding-left: 5.5vw;
+    padding-right: 5.5vw;
+    gap: 4vw;
+  }
+  .hero-copy { max-width: 760px; }
+  .hero-art { width: 100%; }
+  .section {
+    max-width: 1900px;
+    padding: 92px 5.5vw;
+  }
+  .experience-section, .capabilities-section, .credentials-section {
+    max-width: none;
+  }
+  .experience-section > .section-kicker,
+  .experience-section > .section-heading-row,
+  .experience-section > .experience-list,
+  .capabilities-section > .section-kicker,
+  .capabilities-section > .section-heading-row,
+  .capabilities-section > .capability-grid,
+  .credentials-section > .section-kicker,
+  .credentials-section > .section-heading-row,
+  .credentials-section > .credential-list {
+    max-width: 1580px;
+  }
+  .section-heading-row { margin-bottom: 44px; }
+  .about-grid { gap: 7vw; }
+  .featured-content { gap: 5vw; padding-left: 2vw; padding-right: 2vw; }
+  .project-grid, .writing-grid { gap: 18px; }
+  .project-card, .writing-card { padding: 29px; }
+  .capability { padding: 32px 36px; }
+  .contact-section { padding: 105px 5.5vw; }
+}
+@media (min-width: 1500px) {
+  .hero { grid-template-columns: 1fr 1fr; }
+  .hero-art { height: min(680px, 42vw); }
+  .hero h1 { font-size: clamp(72px, 5.2vw, 100px); }
+  .section-heading-row h2 { font-size: clamp(58px, 4.2vw, 78px); }
+}
+@media (min-width: 681px) and (max-width: 1099px) {
+  .hero { padding-left: 6vw; padding-right: 6vw; }
+  .section { padding: 88px 6vw; }
+  .experience-section > .section-kicker,
+  .experience-section > .section-heading-row,
+  .experience-section > .experience-list,
+  .capabilities-section > .section-kicker,
+  .capabilities-section > .section-heading-row,
+  .capabilities-section > .capability-grid,
+  .credentials-section > .section-kicker,
+  .credentials-section > .section-heading-row,
+  .credentials-section > .credential-list {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+/* Slightly tighter vertical rhythm so sections feel connected, not empty. */
+@media (min-width: 681px) {
+  .intro-strip { padding-top: 20px; padding-bottom: 20px; }
+  .section-kicker { margin-bottom: 22px; }
+  .experience-item { padding-top: 27px; padding-bottom: 27px; }
+  .project-card { min-height: 205px; }
+  .writing-card { min-height: 225px; }
+  .credential-list > div { padding-top: 15px; padding-bottom: 15px; }
+}
+
+
+/* VERSION 3.3 — READABILITY, FULLER WIDTH & MORE VISIBLE CINEMATIC MOTION */
+@media (min-width: 1100px) {
+  .site-header { padding-left: 3.5vw; padding-right: 3.5vw; }
+  .hero {
+    width: 100%;
+    max-width: 2000px;
+    min-height: calc(100svh - 78px);
+    padding: 72px 5vw 55px;
+    grid-template-columns: minmax(0, 1.02fr) minmax(440px, .98fr);
+    gap: 5vw;
+  }
+  .hero-copy { max-width: 850px; }
+  .hero-art { min-height: 560px; height: min(680px, 42vw); }
+  .section {
+    width: 100%;
+    max-width: 2000px;
+    padding: 105px 5vw;
+  }
+  .experience-section, .capabilities-section, .credentials-section { max-width: none; }
+  .experience-section > .section-kicker,
+  .experience-section > .section-heading-row,
+  .experience-section > .experience-list,
+  .capabilities-section > .section-kicker,
+  .capabilities-section > .section-heading-row,
+  .capabilities-section > .capability-grid,
+  .credentials-section > .section-kicker,
+  .credentials-section > .section-heading-row,
+  .credentials-section > .credential-list {
+    max-width: 1780px;
+  }
+  .contact-section { padding-left: 5vw; padding-right: 5vw; }
+  .intro-strip { padding-left: 5vw; padding-right: 5vw; }
+}
+@media (min-width: 1500px) {
+  .hero h1 { font-size: clamp(82px, 5.6vw, 112px); }
+  .hero-intro { font-size: 17px; max-width: 700px; }
+  .hero-foot { font-size: 10px; }
+  .section-heading-row h2 { font-size: clamp(64px, 4.6vw, 88px); }
+  .section-side-note { font-size: 14px; max-width: 390px; }
+  .about-copy p:not(.large-copy) { font-size: 15px; }
+  .large-copy { font-size: clamp(27px, 2.4vw, 36px); }
+  .experience-main h3 { font-size: 30px; }
+  .experience-main > p:last-of-type { font-size: 14px; }
+  .company { font-size: 13px; }
+  .project-card h3, .writing-card h3 { font-size: 23px; }
+  .project-card p, .writing-card p, .capability p { font-size: 13px; }
+  .credential-list strong { font-size: 15px; }
+  .credential-list small { font-size: 12px; }
+  .contact-copy { font-size: 15px; }
+}
+@media (min-width: 681px) {
+  /* Improve small labels and supporting copy across the full page. */
+  .eyebrow, .hero-index, .section-kicker, .experience-type,
+  .experience-date, .experience-count, .featured-top,
+  .project-label, .project-card > span, .capability > span,
+  .writing-card > span, .writing-card > b, .credential-list span,
+  .contact-overline, .strip-label, .strip-number {
+    font-size: 10px;
+  }
+  .profile-facts strong { font-size: 14px; }
+  .profile-facts small { font-size: 12px; }
+  .about-copy p:not(.large-copy) { font-size: 14px; }
+  .experience-main > p:last-of-type { font-size: 13px; }
+  .project-card p, .writing-card p, .capability p { font-size: 12px; }
+  .tags span { font-size: 9px; padding: 6px 9px; }
+  .credential-list strong { font-size: 14px; }
+  .credential-list small { font-size: 11px; }
+  .site-footer { font-size: 9px; }
+}
+
+/* Make the motion noticeable while remaining polished, not distracting. */
+@keyframes heroHeadlineReveal {
+  0% { opacity: 0; transform: translateY(34px); clip-path: inset(0 0 100% 0); }
+  100% { opacity: 1; transform: translateY(0); clip-path: inset(0 0 0 0); }
+}
+@keyframes portraitEntrance {
+  0% { opacity: 0; transform: translateX(42px) scale(.94); filter: blur(9px) brightness(.7); }
+  100% { opacity: 1; transform: translateX(0) scale(1); filter: blur(0) brightness(1); }
+}
+@keyframes portraitFloat {
+  0%,100% { transform: scale(1.025) translateY(0); }
+  50% { transform: scale(1.085) translateY(-9px); }
+}
+@keyframes orbitSweepA {
+  from { transform: rotate(-32deg); }
+  to { transform: rotate(328deg); }
+}
+@keyframes orbitSweepB {
+  from { transform: rotate(58deg); }
+  to { transform: rotate(418deg); }
+}
+@keyframes iceMarkerPulse {
+  0%,100% { opacity: .45; box-shadow: 0 0 0 0 #a9d8ee00; }
+  50% { opacity: 1; box-shadow: 0 0 22px 4px #a9d8ee55; }
+}
+@keyframes buttonShimmer {
+  0% { background-position: -180% 0; }
+  100% { background-position: 180% 0; }
+}
+.hero-copy.visible h1 { animation: heroHeadlineReveal 1.15s cubic-bezier(.18,.72,.2,1) both; }
+.hero-copy.visible .hero-intro { animation: fadeUp .9s .35s both; }
+.hero-copy.visible .hero-actions { animation: fadeUp .9s .55s both; }
+.hero-art.visible { animation: portraitEntrance 1.25s .12s cubic-bezier(.18,.72,.2,1) both; }
+.hero-art-portrait .hero-portrait { animation: portraitFloat 11s ease-in-out infinite; }
+.hero-art-portrait .orbit-a { animation: orbitSweepA 24s linear infinite; }
+.hero-art-portrait .orbit-b { animation: orbitSweepB 31s linear infinite; }
+.hero-art-portrait .crosshair-one,
+.hero-art-portrait .crosshair-two { animation: iceMarkerPulse 3s ease-in-out infinite; }
+.hero-art-portrait .crosshair-two { animation-delay: 1.2s; }
+.button-light { background-image: linear-gradient(110deg, transparent 35%, #ffffff65 50%, transparent 65%); background-size: 220% 100%; }
+.button-light:hover { animation: buttonShimmer .9s ease; }
+.reveal { transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
+.experience-item.reveal, .project-card.reveal, .writing-card.reveal,
+.capability.reveal, .credential-list > div.reveal { transform: translateY(32px); }
+.experience-item.reveal.visible, .project-card.reveal.visible, .writing-card.reveal.visible,
+.capability.reveal.visible, .credential-list > div.reveal.visible { transform: translateY(0); }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 680px) {
+  .hero-intro { font-size: 14px; }
+  .section { padding-top: 72px; padding-bottom: 72px; }
+  .about-copy p:not(.large-copy) { font-size: 13px; }
+  .project-card p, .writing-card p, .capability p { font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-copy.visible h1, .hero-copy.visible .hero-intro,
+  .hero-copy.visible .hero-actions, .hero-art.visible,
+  .hero-art-portrait .hero-portrait, .hero-art-portrait .orbit-a,
+  .hero-art-portrait .orbit-b, .hero-art-portrait .crosshair-one,
+  .hero-art-portrait .crosshair-two, .button-light:hover {
+    animation: none !important;
+  }
+}
+
+
+/* VERSION 3.4 — FULLER CANVAS, COMPACT RHYTHM & TYPOGRAPHY MOTION */
+@media (min-width: 1100px) {
+  .site-header { padding-left: 3vw; padding-right: 3vw; }
+  .hero {
+    width: 100%;
+    max-width: 2100px;
+    padding: 56px 4vw 38px;
+    min-height: calc(100svh - 78px);
+    grid-template-columns: minmax(0, 1.04fr) minmax(480px, .96fr);
+    gap: 3.5vw;
+  }
+  .hero-copy { max-width: 920px; }
+  .hero h1 { font-size: clamp(78px, 6vw, 116px); line-height: .94; margin: 17px 0 23px; }
+  .hero-art { height: min(690px, 43vw); min-height: 570px; }
+  .hero-intro { max-width: 760px; font-size: 17px; line-height: 1.85; }
+  .hero-foot { margin-top: 48px; }
+  .intro-strip { padding: 19px 4vw; }
+  .section {
+    width: 100%;
+    max-width: 2100px;
+    padding: 82px 4vw;
+  }
+  .experience-section, .capabilities-section, .credentials-section { max-width: none; }
+  .experience-section > .section-kicker,
+  .experience-section > .section-heading-row,
+  .experience-section > .experience-list,
+  .capabilities-section > .section-kicker,
+  .capabilities-section > .section-heading-row,
+  .capabilities-section > .capability-grid,
+  .credentials-section > .section-kicker,
+  .credentials-section > .section-heading-row,
+  .credentials-section > .credential-list { max-width: 1900px; }
+  .section-heading-row { margin-bottom: 36px; }
+  .section-heading-row h2 { font-size: clamp(58px, 4.5vw, 86px); }
+  .about-grid { grid-template-columns: 1.3fr .7fr; gap: 5vw; }
+  .experience-item { grid-template-columns: 175px minmax(0, 1fr) 35px; gap: 28px; padding: 25px 0; }
+  .featured-content { gap: 3.5vw; padding: 44px 2vw 18px; }
+  .project-grid, .writing-grid { gap: 16px; }
+  .project-card, .writing-card { padding: 25px; }
+  .project-card { min-height: 195px; }
+  .writing-card { min-height: 220px; }
+  .capability { padding: 25px 30px; min-height: 155px; }
+  .contact-section { padding: 92px 4vw; }
+}
+@media (min-width: 1500px) {
+  .hero h1 { font-size: clamp(90px, 6.15vw, 124px); }
+  .hero-art { height: min(720px, 43vw); }
+  .hero-intro { font-size: 18px; }
+  .section-heading-row h2 { font-size: clamp(68px, 4.5vw, 92px); }
+  .about-copy p:not(.large-copy) { font-size: 15px; }
+  .large-copy { font-size: 34px; }
+  .experience-main h3 { font-size: 29px; }
+  .experience-main > p:last-of-type { font-size: 14px; }
+  .project-card h3, .writing-card h3 { font-size: 23px; }
+  .project-card p, .writing-card p, .capability p { font-size: 13px; }
+  .credential-list strong { font-size: 15px; }
+}
+@media (min-width: 681px) {
+  .section-kicker, .eyebrow, .hero-index, .experience-type,
+  .experience-date, .experience-count, .featured-top, .project-label,
+  .project-card > span, .capability > span, .writing-card > span,
+  .writing-card > b, .credential-list span, .contact-overline { font-size: 10px; }
+  .profile-facts strong { font-size: 14px; }
+  .profile-facts small { font-size: 12px; }
+  .about-copy p:not(.large-copy) { font-size: 14px; }
+  .experience-main > p:last-of-type, .project-card p, .writing-card p,
+  .capability p { font-size: 12px; }
+  .tags span { font-size: 9px; }
+  .credential-list strong { font-size: 14px; }
+  .credential-list small { font-size: 11px; }
+}
+
+/* Animated text: each hero line enters separately; section titles reveal on scroll. */
+@keyframes textLineIn {
+  0% { opacity: 0; transform: translateY(42px); filter: blur(7px); clip-path: inset(0 0 100% 0); }
+  100% { opacity: 1; transform: translateY(0); filter: blur(0); clip-path: inset(0 0 0 0); }
+}
+@keyframes bodyTextIn {
+  from { opacity: 0; transform: translateY(17px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-title { overflow: visible; }
+.hero-title .title-line { display: block; opacity: 0; }
+.hero-copy.visible .title-line-one { animation: textLineIn .95s .12s cubic-bezier(.2,.7,.2,1) forwards; }
+.hero-copy.visible .title-line-two { animation: textLineIn 1.05s .34s cubic-bezier(.2,.7,.2,1) forwards; }
+.hero-copy.visible .eyebrow { animation: bodyTextIn .7s .05s both; }
+.hero-copy.visible .hero-index { animation: bodyTextIn .7s .2s both; }
+.hero-copy.visible .hero-intro { animation: bodyTextIn .85s .62s both; }
+.hero-copy.visible .hero-actions { animation: bodyTextIn .85s .78s both; }
+.section.visible .section-heading-row h2 { animation: textLineIn .9s .05s both; }
+.section.visible .section-side-note { animation: bodyTextIn .85s .25s both; }
+.section.visible .large-copy { animation: bodyTextIn .85s .2s both; }
+.section.visible .about-copy > p:not(.large-copy) { animation: bodyTextIn .8s .32s both; }
+.experience-item.visible .experience-main { animation: bodyTextIn .75s both; }
+.project-card.visible, .writing-card.visible, .capability.visible,
+.credential-list > div.visible { animation: bodyTextIn .8s both; }
+@media (max-width: 680px) {
+  .hero { padding-top: 48px; }
+  .hero h1 { font-size: clamp(44px, 11.5vw, 65px); }
+  .hero-intro { font-size: 14px; }
+  .section { padding: 68px 6vw; }
+  .hero-title .title-line { display: block; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-copy.visible .title-line-one, .hero-copy.visible .title-line-two,
+  .hero-copy.visible .eyebrow, .hero-copy.visible .hero-index,
+  .hero-copy.visible .hero-intro, .hero-copy.visible .hero-actions,
+  .section.visible .section-heading-row h2,
+  .section.visible .section-side-note, .section.visible .large-copy,
+  .section.visible .about-copy > p:not(.large-copy),
+  .experience-item.visible .experience-main,
+  .project-card.visible, .writing-card.visible, .capability.visible,
+  .credential-list > div.visible { animation: none !important; opacity: 1; transform: none; filter: none; }
+}
